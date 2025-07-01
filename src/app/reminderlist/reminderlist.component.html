@@ -1,0 +1,17 @@
+<app-home></app-home>
+<div>
+    <div *ngIf="reminders.length;else noReminder" class="container mt-5">
+        <div *ngFor="let reminder of reminders" class="card mb-3">
+            <div class="card-body">
+                <p class="card-title">{{ reminder.title }}</p>
+                <p class="card-text">{{ reminder.description }}</p>
+                <p class="card-text"><small class="text-muted">{{ reminder.date | date:'short' }}</small></p>
+                <button class="btn btn-danger" (click)="deleteReminder(reminder.id)">Delete</button>
+
+        </div>
+    </div>
+</div>
+<ng-template #noReminder>
+    <div class="alert alert-info" role="alert">
+        No reminders found. Please create a reminder.
+    </div>

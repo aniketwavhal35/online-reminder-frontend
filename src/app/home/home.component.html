@@ -1,0 +1,14 @@
+<!-- File: src/app/home/home.component.html -->
+
+
+<div class="text-center my-3">
+    <p>Online Reminder System is a simple application to manage your reminders.</p>
+    <button class="btn btn-primary mx-2" [routerLink]="['/create']">Create</button>
+    <button class="btn btn-primary mx-2"  [routerLink]="['/list']">Reminder List</button>
+    <button class="btn btn-primary mx-2" [routerLink]="['/user']">User Details></button>
+    <button *ngIf="!isLoggedIn" class="btn btn-primary mx-2" [routerLink]="['/login']">Login</button>
+    <button *ngIf="!isLoggedIn" class="btn btn-primary mx-2" [routerLink]="['/register']">Register</button>
+    <button *ngIf="isLoggedIn" class="btn btn-primary mx-2" [routerLink]="['/userdetail']">User Detail</button>
+    <button *ngIf="isLoggedIn" class="btn btn-danger mx-2" (click)="logout()">Logout</button>
+
+</div>

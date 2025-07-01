@@ -1,0 +1,19 @@
+<app-home></app-home>
+<div>
+    <form [formGroup]="reminderForm"  (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Reminder Title</label>
+            <input type="text" id="reminderTitle" class="form-control" formControlName="title" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea id="reminderDescription" class="form-control" formControlName="description" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Reminder Date</label>
+            <input type="date" id="reminderDate" class="form-control" formControlName="date" required>
+        </div>
+        <button class="btn btn-primary mt-3">Add Reminder</button>
+
+    </form>
+</div>
